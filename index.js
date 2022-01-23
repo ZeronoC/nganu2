@@ -42,7 +42,7 @@ global.config = require('./src/config.json')
 global.quot = config.quot
 global.API = config.api
 global.owner = config.owner
-global.footer = `${package.name} ~ Multi Device [BETA]`
+global.footer = `${package.name} ~ iyyan@2022`
 let { igApi, shortcodeFormatter, isIgPostUrl } = require('insta-fetcher');
 let ig = new igApi(process.env.session_id)
 let session;
