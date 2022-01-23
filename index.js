@@ -502,7 +502,7 @@ const start = async () => {
                         for (let v of chatsJid) {
                             await delay(5000)
                             let media = {
-                                caption: `📢 *Mg Bot Broadcast*\n\n${args.join(' ')}\n\n*#${chatsJid.indexOf(v) + 1}*`
+                                caption: `📢 *Bot Broadcast*\n\n${args.join(' ')}\n\n*#${chatsJid.indexOf(v) + 1}*`
                             };
                             /image|video/i.test(mediaType)
                                 ? media['image'] = buff
@@ -560,7 +560,7 @@ const start = async () => {
                     }
                     await sendListM(
                         from,
-                        { buttonText: 'Music Downloader', description: desc, title: 'Pilih untuk mendownload' },
+                        { buttonText: 'Pilih Mudsic Disini...', description: desc, title: 'Pilih untuk mendownload' },
                         list,
                         m
                     )
@@ -641,15 +641,14 @@ const start = async () => {
             if (cmd == 'help' || cmd == 'menu') {
                 await typing(from)
                 const buttonsDefault = [
-                    { urlButton: { displayText: `🌐 Rest api`, url: `https://masgimenz.my.id` } },
+                    { urlButton: { displayText: `💌 Chat Admin`, url: `https://wa.me/6289614412045?text=Min` } },
                     { urlButton: { displayText: `💌 Telegram Bot`, url: `https://t.me/tikdl_bot` } },
                     { quickReplyButton: { displayText: `☎ Owner`, id: `${prefix}owner` } },
                 ]
 
-                let text = `Hi *${pushname}* 🤗\nYour Device is : *${getDevice(m.key.id)}* \n\n*'${package.name}'* ~> coded by ${package.author}\n\n` +
+                let text = `Hayyy *${pushname}* 🤗\n\n` +
                     `⌚️ : ${moment().format('HH:mm:ss')}\n` +
                     `📅 : ${pasaran().hijriyah}\n` +
-                    `📆 : ${pasaran().jawa}\n\n` +
                     `${fs.readFileSync('./src/menu.txt', 'utf-8').replace(/prefix /g, prefix)}`
                 client.sendMessage(from, { caption: text, footer, templateButtons: buttonsDefault, location: { jpegThumbnail: (await getBuffer('./src/logo.jpg')).buffer, name: `${package.name}` }, headerType: 4 }, { quoted: m })
             }
@@ -659,10 +658,10 @@ const start = async () => {
                 owner.map(async (v) => await sendContact(m.chat, v.split(S_WHATSAPP_NET)[0], package.author, m))
                 await delay(2000)
                 const btn = [
-                    { urlButton: { displayText: `🌐 Web`, url: `https://masgimenz.my.id` } },
-                    { urlButton: { displayText: `📸 Instagram`, url: `https://www.instagram.com/gimenz.id` } },
+                    { urlButton: { displayText: `🌐 Web`, url: `https://wa.me/6289614412045` } },
+                    { urlButton: { displayText: `📸 Instagram`, url: `https://www.instagram.com/iy.yan_` } },
                     { urlButton: { displayText: `🐈 Github`, url: `https://github.com/Gimenz` } },
-                    { urlButton: { displayText: `🎨 TikTok`, url: `https://www.tiktok.com/@gh0stp0w3r` } },
+                    { urlButton: { displayText: `🎨 TikTok`, url: `https://www.tiktok.com/yanz_bot` } },
                 ]
                 client.sendMessage(from, { text: `Social Media`, footer, templateButtons: btn }, { quoted: m })
             }
