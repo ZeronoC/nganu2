@@ -1,12 +1,12 @@
 *Social Media Downloader Bot*
-[ kirimkan link post dari social media yang ingin di download, dan tunggu bot memproses ] - contoh : https://www.instagram.com/reel/CXg9cuaDuNq
+[ kirimkan link post dari social media yang ingin di download, dan tunggu bot memproses ]
 
 *Supported links* :
-*├* Facebook [support public groups]
+*├* Facebook 
 *├* TikTok
-*├* Instagram <stories | highlights | post | reel | tv>
-*├* Pinterest <photo | video>
-*└* Twitter <photo | video> [support multiple media]
+*├* Instagra
+*├* Pinterest
+*└* Twitter
 
 *Info!*
 simbol *<>* berarti argumen wajib di isi
