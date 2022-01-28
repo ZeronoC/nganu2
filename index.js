@@ -524,7 +524,7 @@ const start = async () => {
                 }
             }
 
-            if (cmd == 'music') {
+            if (cmd == 'music' || cmd == 'lagu' || cmd == 'musik') {
                 try {
                     if (args.length < 1) return reply(`*Fitur mencari lagu full tag metadata, sangat disarankan unutk memasukkan judul lagu yang tepat*\n${prefix}${cmd} judul - artis\n\ncontoh : ${prefix}${cmd} samudra janji - bima tarore`)
                     await typing(from)
@@ -555,7 +555,32 @@ const start = async () => {
                         list.push({
                             title: `${i + 1}. ${arr[i].title}`,
                             description: `Artist : ${arr[i].artist}\nAlbum : ${arr[i].album}\nDuration : ${arr[i].duration.label}\nSource : ${arr[i].isYtMusic ? 'YouTube Music' : 'YouTube'}\nId : ${arr[i].id}`,
-                            rowId: `${prefix}ytmp3 ${arr[i].url}`
+                            rowId: `${prefix}ytmp3 ${arr[i].url} --vn`
+                        });
+                    }
+                    await sendListM(
+                        from,
+                        { buttonText: 'Pilih Music Disini...', description: desc, title: 'Pilih untuk mendownload' },
+                        list,
+                        m
+                    )
+                } catch (error) {
+                    reply('aww snap. error happened')
+                    console.log(error);
+                }
+            }
+if (cmd == 'play2') {
+                try {
+                    if (args.length < 1) return reply(`*Fitur mencari lagu full tag metadata, sangat disarankan unutk memasukkan judul lagu yang tepat*\n${prefix}${cmd} judul - artis\n\ncontoh : ${prefix}${cmd} samudra janji - bima tarore`)
+                    await typing(from)
+                    const arr = await YT.searchTrack(args.join(' '))
+                    let list = new Array();
+                    let desc = `🎶 *Music Downloader*\nMusic Downloader dengan full tag metadata\n\nDitemukan *${arr.length}* lagu`
+                    for (let i = 0; i < arr.length; i++) {
+                        list.push({
+                            title: `${i + 1}. ${arr[i].title}`,
+                            description: `Artist : ${arr[i].artist}\nAlbum : ${arr[i].album}\nDuration : ${arr[i].duration.label}\nSource : ${arr[i].isYtMusic ? 'YouTube Music' : 'YouTube'}\nId : ${arr[i].id}`,
+                            rowId: `${prefix}ytmp3 ${arr[i].url --metadata}`
                         });
                     }
                     await sendListM(
@@ -570,12 +595,10 @@ const start = async () => {
                 }
             }
 
+
             if (cmd == 'ytmp3') {
                 try {
-                    url = args[0]
-                    if (args.length < 1 || !isUrl(url) || !YT.isYTUrl(url)) return reply(`*Penggunaan:*\n${prefix}${cmd} url --args\n*args* bersifat opsional (bisa diisi atau tidak)\n\n` +
-                        `*list args:*\n--metadata : mendownload mp3 dengan tags metadata\n--vn dapat langsung di play via WA\n\ncontoh : ${prefix}ytmp3 https://youtu.be/0Mal8D63Zew --metadata`)
-                    await typing(from)
+                     await typing(from)
                     if (type == 'listResponseMessage') {
                         const videoID = YT.getVideoID(url)
                         const search = await YT.searchTrack(videoID)
