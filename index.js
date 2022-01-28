@@ -524,7 +524,7 @@ const start = async () => {
                 }
             }
 
-            if (cmd == 'music' || cmd == 'lagu' || cmd == 'musik') {
+            if (cmd == 'music' || cmd == 'musik') {
                 try {
                     if (args.length < 1) return reply(`*Fitur mencari lagu full tag metadata, sangat disarankan unutk memasukkan judul lagu yang tepat*\n${prefix}${cmd} judul - artis\n\ncontoh : ${prefix}${cmd} samudra janji - bima tarore`)
                     await typing(from)
@@ -569,7 +569,7 @@ const start = async () => {
                     console.log(error);
                 }
             }
-if (cmd == 'play2') {
+if (cmd == 'lagu') {
                 try {
                     if (args.length < 1) return reply(`*Fitur mencari lagu full tag metadata, sangat disarankan unutk memasukkan judul lagu yang tepat*\n${prefix}${cmd} judul - artis\n\ncontoh : ${prefix}${cmd} samudra janji - bima tarore`)
                     await typing(from)
