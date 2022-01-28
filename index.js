@@ -514,7 +514,7 @@ const start = async () => {
                     } else {
                         for (let v of chatsJid) {
                             await delay(5000)
-                            await client.sendMessage(v, { text: `📢 *Mg Bot Broadcast*\n\n${args.join(' ')}\n\n*#${chatsJid.indexOf(v) + 1}*` }, { sendEphemeral: true })
+                            await client.sendMessage(v, { text: `📢 *Bot Broadcast*\n\n${args.join(' ')}\n\n*#${chatsJid.indexOf(v) + 1}*` }, { sendEphemeral: true })
                         }
                         reply(`Broadcasted to *${chatsJid.length}*`)
                     }
@@ -560,7 +560,7 @@ const start = async () => {
                     }
                     await sendListM(
                         from,
-                        { buttonText: 'Pilih Mudsic Disini...', description: desc, title: 'Pilih untuk mendownload' },
+                        { buttonText: 'Pilih Music Disini...', description: desc, title: 'Pilih untuk mendownload' },
                         list,
                         m
                     )
@@ -660,7 +660,7 @@ const start = async () => {
                 const btn = [
                     { urlButton: { displayText: `🌐 Web`, url: `https://wa.me/6289614412045` } },
                     { urlButton: { displayText: `📸 Instagram`, url: `https://www.instagram.com/iy.yan_` } },
-                    { urlButton: { displayText: `🐈 Github`, url: `https://github.com/Gimenz` } },
+                    { urlButton: { displayText: `🐈 Github`, url: `https://github.com/ZeronoC` } },
                     { urlButton: { displayText: `🎨 TikTok`, url: `https://www.tiktok.com/yanz_bot` } },
                 ]
                 client.sendMessage(from, { text: `Social Media`, footer, templateButtons: btn }, { quoted: m })
