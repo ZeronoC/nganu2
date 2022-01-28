@@ -580,7 +580,7 @@ if (cmd == 'lagu') {
                         list.push({
                             title: `${i + 1}. ${arr[i].title}`,
                             description: `Artist : ${arr[i].artist}\nAlbum : ${arr[i].album}\nDuration : ${arr[i].duration.label}\nSource : ${arr[i].isYtMusic ? 'YouTube Music' : 'YouTube'}\nId : ${arr[i].id}`,
-                            rowId: `${prefix}ytmp3 ${arr[i].url --metadata}`
+                            rowId: `${prefix}ytmp3 ${arr[i].url} --metadata`
                         });
                     }
                     await sendListM(
